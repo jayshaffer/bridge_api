@@ -1,0 +1,42 @@
+{
+  "meta": {},
+  "linked": {},
+  "users": [
+    {
+      "id": "9",
+      "uid": "brandonbr",
+      "first_name": "test",
+      "last_name": "mcfake",
+      "email": "test@test.com",
+      "roles": [],
+      "name": "Brandon Broshinsky",
+      "avatar_url": null,
+      "deleted_at": null,
+      "unsubscribed": null,
+      "welcomedAt": "2015-09-28T14:03:43.771-06:00",
+      "loggedInAt": null,
+      "links": {},
+      "meta": {
+        "can_masquerade": true
+      }
+    },
+    {
+      "id": "4",
+      "uid": "jfarnworth+bridgetest1@instructure.com",
+      "first_name": "Jtest",
+      "last_name": "Ftest",
+      "email": "jfarnworth+bridgetest1@instructure.com",
+      "roles": [],
+      "name": "Jtest Ftest",
+      "avatar_url": null,
+      "deleted_at": null,
+      "unsubscribed": null,
+      "welcomedAt": "2015-09-08T15:56:36.307-06:00",
+      "loggedInAt": "2015-07-17T00:00:00.000-06:00",
+      "links": {},
+      "meta": {
+        "can_masquerade": true
+      }
+    }
+  ]
+}

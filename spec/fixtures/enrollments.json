@@ -1,0 +1,58 @@
+{
+  "meta": {},
+  "linked": {
+    "course_templates": [
+      {
+        "id": "2"
+      }
+    ],
+    "learners": [
+      {
+        "id": "15",
+        "name": "John Smith",
+        "avatar_url": null,
+        "deleted": false
+      },
+      {
+        "id": "11",
+        "name": "jshaffer@instructure.com",
+        "avatar_url": null,
+        "deleted": false
+      }
+    ]
+  },
+  "enrollments": [
+    {
+      "id": "2",
+      "course_template": "2",
+      "end_at": "2015-12-29T23:59:59.000-07:00",
+      "progress": 0,
+      "can_be_removed": true,
+      "completed_at": null,
+      "score": 0,
+      "state": "created",
+      "links": {
+        "learner": {
+          "type": "learners",
+          "id": "11"
+        }
+      }
+    },
+    {
+      "id": "34",
+      "course_template": "2",
+      "end_at": "2016-02-29T23:59:59.000-07:00",
+      "progress": 0,
+      "can_be_removed": true,
+      "completed_at": null,
+      "score": 0,
+      "state": "created",
+      "links": {
+        "learner": {
+          "type": "learners",
+          "id": "15"
+        }
+      }
+    }
+  ]
+}

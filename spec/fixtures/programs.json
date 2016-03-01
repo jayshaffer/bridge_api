@@ -1,0 +1,59 @@
+{
+  "meta": {},
+  "programs": [
+    {
+      "id": "1",
+      "title": "New Program",
+      "course_count": 0,
+      "unfinished_learners_count": 0,
+      "next_due_at": null,
+      "overdue_learners_count": null,
+      "is_published": true,
+      "publishable": true,
+      "has_unpublished_changes": false,
+      "assignment_period": 0,
+      "sub_account": {
+        "id": 1,
+        "name": "chrisc",
+        "not_current": false
+      },
+      "course_templates": [
+        {
+          "id": "1",
+          "estimated_time": 1,
+          "passing_threshold": 80,
+          "default_days_until_due": 7,
+          "title": "Test Course 1",
+          "is_published": true
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "New Program 2",
+      "course_count": 0,
+      "unfinished_learners_count": 0,
+      "next_due_at": null,
+      "overdue_learners_count": null,
+      "is_published": true,
+      "publishable": true,
+      "has_unpublished_changes": false,
+      "assignment_period": 0,
+      "sub_account": {
+        "id": 1,
+        "name": "chrisc",
+        "not_current": false
+      },
+      "course_templates": [
+        {
+          "id": "2",
+          "estimated_time": 1,
+          "passing_threshold": 80,
+          "default_days_until_due": 7,
+          "title": "Test Course 1",
+          "is_published": true
+        }
+      ]
+    }
+  ]
+}

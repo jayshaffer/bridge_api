@@ -1,0 +1,41 @@
+{
+  "meta": {},
+  "course_templates": [
+    {
+      "id": "1",
+      "estimated_time": 1,
+      "passing_threshold": 80,
+      "title": "My Test Course",
+      "is_published": true,
+      "has_unpublished_changes": false,
+      "default_days_until_due": 7,
+      "has_certificate": false,
+      "program_ids": ["3", "4"],
+      "external_status": "inapplicable",
+      "course_type":"bridge",
+      "enrollments_count": 2,
+      "next_section_due": "2015-07-07T23:59:59.000Z",
+      "links": {
+        "author": "1"
+      }
+    },
+    {
+      "id": "2",
+      "estimated_time": 1,
+      "passing_threshold": 80,
+      "title": "My second test Course",
+      "is_published": true,
+      "has_unpublished_changes": false,
+      "default_days_until_due": 7,
+      "has_certificate": false,
+      "program_ids": ["3", "4"],
+      "external_status": "inapplicable",
+      "course_type":"bridge",
+      "enrollments_count": 2,
+      "next_section_due": "2015-07-07T23:59:59.000Z",
+      "links": {
+        "author": "1"
+      }
+    }
+  ]
+}

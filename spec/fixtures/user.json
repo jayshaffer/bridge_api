@@ -1,0 +1,24 @@
+{
+  "meta": {},
+  "linked": {},
+  "users": [
+    {
+      "id": "10",
+      "uid": "testuser",
+      "first_name": "test",
+      "last_name": "mcfake",
+      "email": "test@test.com",
+      "roles": [],
+      "name": "Brandon Broshinsky",
+      "avatar_url": null,
+      "deleted_at": null,
+      "unsubscribed": null,
+      "welcomedAt": "2015-09-28T14:03:43.771-06:00",
+      "loggedInAt": null,
+      "links": {},
+      "meta": {
+        "can_masquerade": true
+      }
+    }
+  ]
+}
