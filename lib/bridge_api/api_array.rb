@@ -61,7 +61,7 @@ module BridgeAPI
       if pages?
         response = get_page(@next_page)
         apply_response_metadata(response)
-        @members = get_response_content(response)
+        @members.concat(get_response_content(response))
         while @next_page
           response = get_page(@next_page)
           apply_response_metadata(response)
@@ -95,7 +95,7 @@ module BridgeAPI
           return content.values[0]
         end
       end
-      {}
+      []
     end
 
     def apply_response_metadata(response)
@@ -109,10 +109,10 @@ module BridgeAPI
       @next_page = nil
       @prev_page = nil
       if response.body.is_a?(Hash) && response.body.key?('meta')
-        if response.body['meta'].key('next')
+        if response.body['meta'].key?('next')
           @next_page = response.body['meta']['next']
         end
-        if response.body['meta'].key('next')
+        if response.body['meta'].key?('prev')
           @prev_page = response.body['meta']['prev']
         end
       end
