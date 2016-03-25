@@ -21,10 +21,14 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rake', '~> 0'
   gem.add_development_dependency 'bundler', '~> 1.0', '>= 1.0.0'
   gem.add_development_dependency 'rspec', '~> 2.6'
-  gem.add_development_dependency 'webmock', '~> 0'
+  gem.add_development_dependency 'webmock', '~>1.22.6'
   gem.add_development_dependency 'pry', '~> 0'
   gem.add_development_dependency 'tilt', '>= 1.3.4', '~> 1.3'
+  gem.add_development_dependency 'sinatra', '~> 1.0'
+  gem.add_development_dependency 'byebug', '~> 8.2.2'
 
-  gem.add_dependency 'footrest', '~> 0.2', '>= 0.2.2'
+  gem.add_dependency 'footrest', '>= 0.5.1'
+  gem.add_dependency 'faraday', '~> 0.9.0'
+  gem.add_dependency 'faraday_middleware', '~> 0.9.0'
 
 end
