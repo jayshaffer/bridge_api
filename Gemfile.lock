@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bridge_api (0.0.1)
+    bridge_api (0.0.2)
       faraday (~> 0.9.0)
       faraday_middleware (~> 0.9.0)
       footrest (>= 0.5.1)

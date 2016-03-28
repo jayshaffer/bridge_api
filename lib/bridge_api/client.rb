@@ -6,6 +6,7 @@ require 'footrest/http_error'
 require 'footrest/pagination'
 require 'footrest/follow_redirects'
 require 'footrest/parse_json'
+require 'base64'
 
 
 module BridgeAPI
@@ -52,12 +53,12 @@ module BridgeAPI
         faraday.headers[:accept]          = "application/json"
         faraday.headers[:authorization]   = "Bearer #{config[:token]}" if config[:token]
         faraday.headers[:user_agent]      = "Footrest"
-        if config[:basic_api_token]
-          faraday.headers[:authorization] =   "Basic #{config[:basic_api_token]}"
+        if config[:api_key] && config[:api_secret]
+          faraday.headers[:authorization] =   'Basic ' + Base64.strict_encode64("#{config[:api_key]}:#{config[:api_secret]}")
         elsif config[:token]
           faraday.headers[:authorization] =   "Bearer #{config[:token]}"
         else
-          raise 'No authorization token provided'
+          raise 'No api authorization provided'
         end
       end
     end
