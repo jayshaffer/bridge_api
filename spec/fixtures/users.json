@@ -1,6 +1,27 @@
 {
-  "meta": {},
-  "linked": {},
+  "meta": {
+    "next": "http://bridge.bridgeapp.com/api/author/users?after=eyJ0eXAiOiJKV1QiLCJhSDiQQ"
+  },
+  "linked": {
+    "custom_fields": [
+      {
+        "id": "1",
+        "name": "Title"
+      }
+    ],
+    "custom_field_values": [
+      {
+        "id": "2",
+        "value": "Senator",
+        "links": {
+          "custom_field": {
+            "id": "1",
+            "type": "custom_fields"
+          }
+        }
+      }
+    ]
+  },
   "users": [
     {
       "id": "9",

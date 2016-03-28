@@ -5,6 +5,8 @@ module BridgeAPI
 
     @next_page = nil
     @prev_page = nil
+    @linked = {}
+    @meta = {}
 
     META_FIELDS = %w(meta linked).freeze
 
@@ -41,6 +43,14 @@ module BridgeAPI
 
     def pages?
       !@next_page.nil?
+    end
+
+    def meta
+      @meta
+    end
+
+    def linked
+      @linked
     end
 
     def next_page
@@ -103,6 +113,20 @@ module BridgeAPI
       @headers = response.headers
       @method = response.env[:method]
       init_pages(response)
+      init_linked(response)
+      init_meta(response)
+    end
+
+    def init_linked(response)
+      if response.body.is_a?(Hash) && response.body.key?('linked')
+        @linked = response.body['linked']
+      end
+    end
+
+    def init_meta(response)
+      if response.body.is_a?(Hash) && response.body.key?('meta')
+        @meta = response.body['meta']
+      end
     end
 
     def init_pages(response)
