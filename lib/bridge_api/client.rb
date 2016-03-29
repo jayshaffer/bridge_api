@@ -1,7 +1,6 @@
 require 'footrest/client'
 require 'faraday'
 require 'footrest'
-require 'byebug'
 require 'footrest/http_error'
 require 'footrest/pagination'
 require 'footrest/follow_redirects'
