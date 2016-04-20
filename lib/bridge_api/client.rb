@@ -17,6 +17,7 @@ module BridgeAPI
     ADMIN_PATH = "/admin"
     AUTHOR_PATH = "/author"
     LEARNER_PATH = "/learner"
+    CUSTOM_FIELD_PATH = "/custom_fields"
     API_VERSION = 1
     API_PATH = '/api'
 
@@ -27,6 +28,7 @@ module BridgeAPI
     include CourseTemplate
     include Enrollment
     include User
+    include CustomField
     include Footrest
 
     # Override Footrest request for ApiArray support

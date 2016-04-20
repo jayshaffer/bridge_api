@@ -75,6 +75,28 @@ class FakeBridge < Sinatra::Base
     get_json_data 200, 'enrollment.json'
   end
 
+  #Custom Fields
+
+  get %r{/api/author/custom_fields} do
+    get_json_data 200, 'custom_fields.json'
+  end
+
+  get %r{/api/author/custom_fields/\d+$} do
+    get_json_data 200, 'custom_fields.json'
+  end
+
+  put %r{/api/author/custom_fields/\d+$} do
+    get_json_data 200, 'custom_fields.json'
+  end
+
+  post %r{/api/author/custom_fields} do
+    get_json_data 200, 'custom_fields.json'
+  end
+
+  delete %r{/api/author/custom_fields/\d+$} do
+    get_json_data 204, nil
+  end
+
   private
 
   def get_json_data(response_code, file_name)
