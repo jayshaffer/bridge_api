@@ -5,8 +5,6 @@ module BridgeAPI
 
     @next_page = nil
     @prev_page = nil
-    @linked = {}
-    @meta = {}
 
     META_FIELDS = %w(meta linked).freeze
 
@@ -18,6 +16,8 @@ module BridgeAPI
 
     def initialize(response, api_client)
       @api_client = api_client
+      @linked = {}
+      @meta = {}
       case response.status
         when 200..206
           apply_response_metadata(response)
@@ -119,13 +119,13 @@ module BridgeAPI
 
     def init_linked(response)
       if response.body.is_a?(Hash) && response.body.key?('linked')
-        @linked = response.body['linked']
+        @linked = @linked.merge(response.body['linked']){|key,oldval,newval| [*oldval].to_a + [*newval].to_a }
       end
     end
 
     def init_meta(response)
       if response.body.is_a?(Hash) && response.body.key?('meta')
-        @meta = response.body['meta']
+        @meta = @meta.merge(response.body['meta']){|key,oldval,newval| [*oldval].to_a + [*newval].to_a }
       end
     end
 
