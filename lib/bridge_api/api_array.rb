@@ -58,11 +58,11 @@ module BridgeAPI
     end
 
     def each_page(&block)
-      block.call(@members)
+      block.call(@members, @linked, @meta)
       while @next_page
         response = get_page(@next_page)
-        apply_response_metadata(response)
-        block.call(@members)
+        apply_response_metadata(response, false)
+        block.call(@members, @linked, @meta)
       end
       @link_hash = {}
     end
@@ -108,7 +108,11 @@ module BridgeAPI
       []
     end
 
-    def apply_response_metadata(response)
+    def apply_response_metadata(response, concat = true)
+      unless concat
+        @linked = {}
+        @meta = {}
+      end
       @status = response.status
       @headers = response.headers
       @method = response.env[:method]
