@@ -62,6 +62,7 @@ module BridgeAPI
       while @next_page
         response = get_page(@next_page)
         apply_response_metadata(response, false)
+        @members = get_response_content(response)
         block.call(@members, @linked, @meta)
       end
       @link_hash = {}
