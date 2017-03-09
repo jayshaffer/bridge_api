@@ -14,6 +14,7 @@ module BridgeAPI
     COURSE_TEMPLATE_PATH = '/course_templates'
     ENROLLMENT_PATH = '/enrollments'
     USER_PATH = '/users'
+    MANAGER_PATH = '/managers'
     ADMIN_PATH = "/admin"
     AUTHOR_PATH = "/author"
     LEARNER_PATH = "/learner"
@@ -28,6 +29,7 @@ module BridgeAPI
     include CourseTemplate
     include Enrollment
     include User
+    include Manager
     include CustomField
     include Footrest
 

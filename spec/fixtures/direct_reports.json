@@ -1,0 +1,55 @@
+{
+  "meta": {
+
+  },
+  "manager_id": "17",
+  "direct_reports_count": 2,
+  "direct_reports": [
+    {
+      "id": "3",
+      "uid": "bridge testuser2",
+      "hris_id": null,
+      "first_name": null,
+      "last_name": null,
+      "full_name": null,
+      "sortable_name": null,
+      "email": "",
+      "locale": "en",
+      "roles": [
+
+      ],
+      "name": "bridge testuser2",
+      "avatar_url": null,
+      "updated_at": "2017-03-08T14:52:12.363-07:00",
+      "deleted_at": null,
+      "unsubscribed": null,
+      "welcomed_at": null,
+      "logged_in_at": null,
+      "hire_date": null,
+      "is_manager": false
+    },
+    {
+      "id": "5",
+      "uid": "bridgetestuser@test.com",
+      "hris_id": null,
+      "first_name": "Bridge",
+      "last_name": "TestUser",
+      "full_name": null,
+      "sortable_name": "",
+      "email": "bridgetestuser@test.com",
+      "locale": "en",
+      "roles": [
+
+      ],
+      "name": "bridgetestuser@test.com",
+      "avatar_url": null,
+      "updated_at": "2017-03-08T15:08:46.454-07:00",
+      "deleted_at": null,
+      "unsubscribed": null,
+      "welcomed_at": null,
+      "logged_in_at": null,
+      "hire_date": null,
+      "is_manager": false
+    }
+  ]
+}

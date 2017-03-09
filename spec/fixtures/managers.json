@@ -1,0 +1,53 @@
+{
+  "meta": {
+
+  },
+  "managers": [
+    {
+      "id": "17",
+      "uid": "John.Smith@test.com",
+      "hris_id": null,
+      "first_name": null,
+      "last_name": null,
+      "full_name": null,
+      "sortable_name": null,
+      "email": "John.Smith@test.com",
+      "locale": "en",
+      "roles": [
+        "observer"
+      ],
+      "name": "John.Smith@test.com",
+      "avatar_url": null,
+      "updated_at": "2017-03-08T14:55:36.743-07:00",
+      "deleted_at": null,
+      "unsubscribed": null,
+      "welcomed_at": null,
+      "logged_in_at": null,
+      "hire_date": null,
+      "direct_reports_count": 8
+    },
+    {
+      "id": "6",
+      "uid": "Steve.Perry@test.com",
+      "hris_id": null,
+      "first_name": null,
+      "last_name": null,
+      "full_name": null,
+      "sortable_name": null,
+      "email": "Steve.Perry@test.com",
+      "locale": "en",
+      "roles": [
+        "observer"
+      ],
+      "name": "Steve.Perry@test.com",
+      "avatar_url": null,
+      "updated_at": "2017-03-08T14:52:17.809-07:00",
+      "deleted_at": null,
+      "unsubscribed": null,
+      "welcomed_at": null,
+      "logged_in_at": null,
+      "hire_date": null,
+      "direct_reports_count": 9
+    }
+  ]
+}

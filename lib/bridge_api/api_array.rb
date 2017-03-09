@@ -100,13 +100,15 @@ module BridgeAPI
     end
 
     def get_response_content(response)
-      if response.body.is_a?(Hash)
-        content = response.body.reject{|k, v| META_FIELDS.include?(k)}
-        if content.length > 0
-          return content.values[0]
-        end
+      return [] unless response.body.is_a?(Hash)
+      content = response.body.reject{|k, v| META_FIELDS.include?(k)}
+      if content.length > 1
+        content
+      elsif content.length == 1
+        content.values[0]
+      else
+        []
       end
-      []
     end
 
     def apply_response_metadata(response, concat = true)
