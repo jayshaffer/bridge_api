@@ -11,7 +11,7 @@ module BridgeAPI
     attr_reader :status, :headers, :members
 
     def self.process_response(response, api_client)
-        ApiArray.new(response, api_client)
+      ApiArray.new(response, api_client)
     end
 
     def initialize(response, api_client)
@@ -19,7 +19,7 @@ module BridgeAPI
       @linked = {}
       @meta = {}
       case response.status
-        when 200..206
+        when *((200..206).to_a + [302])
           apply_response_metadata(response)
           @members = get_response_content(response)
       end

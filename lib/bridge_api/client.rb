@@ -11,6 +11,8 @@ require 'base64'
 module BridgeAPI
   class Client < Footrest::Client
 
+    DATA_DUMP_DOWNLOAD_PATH = '/data_dumps/download'
+    DATA_DUMP_PATH = '/data_dumps'
     COURSE_TEMPLATE_PATH = '/course_templates'
     ENROLLMENT_PATH = '/enrollments'
     USER_PATH = '/users'
@@ -32,6 +34,7 @@ module BridgeAPI
     include Manager
     include CustomField
     include Footrest
+    include DataDump
 
     # Override Footrest request for ApiArray support
     def request(method, &block)
@@ -48,8 +51,8 @@ module BridgeAPI
         elsif config[:logger]
           faraday.use Faraday::Response::Logger, config[:logger]
         end
+        faraday.use                         Footrest::FollowRedirects, limit: 5 unless config[:follow_redirects] == false
         faraday.adapter                     Faraday.default_adapter
-        faraday.use                         Footrest::FollowRedirects
         faraday.use                         Footrest::ParseJson, :content_type => /\bjson$/
         faraday.use                         Footrest::RaiseFootrestErrors
         faraday.use                         Footrest::Pagination

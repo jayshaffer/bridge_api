@@ -106,6 +106,20 @@ class FakeBridge < Sinatra::Base
     get_json_data 204, nil
   end
 
+  # Data Dumps
+
+  get %r{/api/admin/data_dumps} do
+    get_json_data 200, 'data_dumps.json'
+  end
+
+  post %r{/api/admin/data_dumps} do
+    get_json_data 200, 'data_dump.json'
+  end
+
+  get %r{/api/admin/data_dumps/download} do
+    get_json_data 200, nil
+  end
+
   private
 
   def get_json_data(response_code, file_name)
