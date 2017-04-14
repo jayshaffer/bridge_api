@@ -16,6 +16,7 @@ module BridgeAPI
     COURSE_TEMPLATE_PATH = '/course_templates'
     ENROLLMENT_PATH = '/enrollments'
     USER_PATH = '/users'
+    GROUPS_PATH = '/groups'
     MANAGER_PATH = '/managers'
     ADMIN_PATH = "/admin"
     AUTHOR_PATH = "/author"
@@ -26,15 +27,10 @@ module BridgeAPI
 
     require 'bridge_api/api_array'
 
-    Dir[File.dirname(__FILE__) + '/client/*.rb'].each {|file| require file }
-
-    include CourseTemplate
-    include Enrollment
-    include User
-    include Manager
-    include CustomField
-    include Footrest
-    include DataDump
+    Dir[File.dirname(__FILE__) + '/client/*.rb'].each do |file|
+      require file
+      include self.const_get("#{File.basename(file).gsub('.rb','').split("_").map{|ea| ea.capitalize}.join('')}")
+    end
 
     # Override Footrest request for ApiArray support
     def request(method, &block)
@@ -68,7 +64,6 @@ module BridgeAPI
         end
       end
     end
-
   end
 end
 

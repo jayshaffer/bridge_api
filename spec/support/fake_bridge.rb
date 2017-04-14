@@ -120,6 +120,16 @@ class FakeBridge < Sinatra::Base
     get_json_data 200, nil
   end
 
+  # Groups
+
+  post %r{/api/author/groups} do
+    get_json_data 201, 'group.json'
+  end
+
+  put %r{/api/author/groups/\d+$} do
+    get_json_data 200, 'group.json'
+  end
+
   private
 
   def get_json_data(response_code, file_name)
