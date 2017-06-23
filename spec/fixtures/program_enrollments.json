@@ -1,0 +1,39 @@
+{
+  "meta": {},
+  "learners": [
+    {
+      "id": "2",
+      "name": "fakeperon",
+      "email": "fakeemail@fakedomain.com",
+      "avatar_url": null,
+      "state": "active",
+      "current_program_item_index": 0,
+      "program_items_complete": 0,
+      "total_program_items": 1,
+      "current_program_item_due": 7,
+      "program_due": null,
+      "group_ids": [],
+      "current_course_index": 0,
+      "courses_complete": 0,
+      "total_courses": 1,
+      "current_course_due": 7
+    },
+    {
+      "id": "3",
+      "name": "fakeperson2",
+      "email": null,
+      "avatar_url": null,
+      "state": "active",
+      "current_program_item_index": 0,
+      "program_items_complete": 0,
+      "total_program_items": 1,
+      "current_program_item_due": 7,
+      "program_due": null,
+      "group_ids": [],
+      "current_course_index": 0,
+      "courses_complete": 0,
+      "total_courses": 1,
+      "current_course_due": 7
+    }
+  ]
+}

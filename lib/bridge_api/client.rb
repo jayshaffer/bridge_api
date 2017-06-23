@@ -15,6 +15,8 @@ module BridgeAPI
     DATA_DUMP_PATH = '/data_dumps'
     COURSE_TEMPLATE_PATH = '/course_templates'
     ENROLLMENT_PATH = '/enrollments'
+    PROGRAM_PATH = '/programs'
+    PROGRAM_ENROLLMENT_PATH = '/learners'
     USER_PATH = '/users'
     GROUPS_PATH = '/groups'
     MANAGER_PATH = '/managers'

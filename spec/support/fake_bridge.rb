@@ -35,6 +35,20 @@ class FakeBridge < Sinatra::Base
     get_json_data 200, 'programs.json'
   end
 
+  ## Program enrollments
+
+  get %r{/api/author/programs/\d+/learners} do
+    get_json_data 200, 'program_enrollments.json'
+  end
+
+  post %r{/api/author/programs/\d+/learners} do
+    get_json_data 204, nil
+  end
+
+  delete %r{/api/author/programs/\d+/learners} do
+    get_json_data 204, nil
+  end
+
   ## Users
 
   get %r{/api/author/users$} do
