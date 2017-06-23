@@ -1,3 +1,3 @@
 module BridgeAPI
-  VERSION = '0.0.12' unless defined?(BridgeAPI::VERSION)
+  VERSION = '0.0.13' unless defined?(BridgeAPI::VERSION)
 end
