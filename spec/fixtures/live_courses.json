@@ -1,0 +1,52 @@
+{
+"meta": {},
+"live_courses": [
+{
+"id": "1",
+"title": "New Rep Training",
+"author_id": "2",
+"description": null,
+"external_course_id": null,
+"sessions_count": 1,
+"enrollments_count": 18,
+"is_published": true,
+"meta": {
+"domain_id": "1",
+"sub_account_id": "1",
+"is_library_item": false,
+"id": "1",
+"name": "Another Name",
+"is_root": true,
+"sub_accounts_exist": false,
+"not_current": false,
+"tac_type": "domestic",
+"tac_custom_body_markup": null,
+"tac_updated_at": "2017-05-05T19:53:36.376Z"
+},
+"has_shared_enrollments": false
+},
+{
+"id": "2",
+"title": "",
+"author_id": "2",
+"description": null,
+"external_course_id": null,
+"sessions_count": 0,
+"enrollments_count": 0,
+"is_published": true,
+"meta": {
+"domain_id": "1",
+"is_library_item": true,
+"id": "1",
+"name": "Some Name",
+"is_root": true,
+"sub_accounts_exist": false,
+"not_current": false,
+"tac_type": "domestic",
+"tac_custom_body_markup": null,
+"tac_updated_at": "2017-05-05T19:53:36.376Z"
+},
+"has_shared_enrollments": false
+}
+]
+}

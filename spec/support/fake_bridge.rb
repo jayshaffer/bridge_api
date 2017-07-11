@@ -144,6 +144,17 @@ class FakeBridge < Sinatra::Base
     get_json_data 200, 'group.json'
   end
 
+  #Live Courses
+  get %r{/api/author/live_courses$} do
+    get_json_data 200, 'live_courses.json'
+  end
+
+  #Live Course Enrollments
+  get %r{/api/author/live_courses/\d+/learners} do
+    get_json_data 200, 'live_course_enrollments.json'
+  end
+
+
   private
 
   def get_json_data(response_code, file_name)
