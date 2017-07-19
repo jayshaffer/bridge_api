@@ -6,18 +6,29 @@ module BridgeAPI
     @next_page = nil
     @prev_page = nil
 
-    META_FIELDS = %w(meta linked).freeze
-
     attr_reader :status, :headers, :members
 
-    def self.process_response(response, api_client)
-      ApiArray.new(response, api_client)
+    def self.process_response(response, api_client, result_mapping)
+      ApiArray.new(response, api_client, result_mapping)
     end
 
-    def initialize(response, api_client)
+    def initialize(response, api_client, result_mapping)
+      @meta_fields = %w(meta linked)
       @api_client = api_client
       @linked = {}
       @meta = {}
+      @extra_meta_fields = []
+      pattern = /.*(\/api\/.*)/
+      path = response.env.url
+      matches = pattern.match(path.to_s)
+      mapping = nil
+      if matches
+        mapping_exists = result_mapping.key?(matches[1])
+        mapping = result_mapping[matches[1]] if mapping_exists
+      end
+      unless mapping.nil?
+        @extra_meta_fields.concat(mapping[:meta])
+      end
       case response.status
         when *((200..206).to_a + [302])
           apply_response_metadata(response)
@@ -101,14 +112,11 @@ module BridgeAPI
 
     def get_response_content(response)
       return [] unless response.body.is_a?(Hash)
-      content = response.body.reject{|k, v| META_FIELDS.include?(k)}
-      if content.length > 1
-        content
-      elsif content.length == 1
-        content.values[0]
-      else
-        []
+      content = response.body.reject{|k, v| @meta_fields.include?(k) || @extra_meta_fields.include?(k)}
+      if content.length > 0
+        return content.values[0]
       end
+      []
     end
 
     def apply_response_metadata(response, concat = true)
@@ -133,6 +141,9 @@ module BridgeAPI
     def init_meta(response)
       if response.body.is_a?(Hash) && response.body.key?('meta')
         @meta = @meta.merge(response.body['meta']){|key,oldval,newval| [*oldval].to_a + [*newval].to_a }
+        @extra_meta_fields.each do |field|
+          @meta[field] = response.body[field]
+        end
       end
     end
 

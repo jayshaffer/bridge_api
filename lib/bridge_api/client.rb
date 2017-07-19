@@ -7,7 +7,6 @@ require 'footrest/follow_redirects'
 require 'footrest/parse_json'
 require 'base64'
 
-
 module BridgeAPI
   class Client < Footrest::Client
 
@@ -26,6 +25,7 @@ module BridgeAPI
     CUSTOM_FIELD_PATH = "/custom_fields"
     API_VERSION = 1
     API_PATH = '/api'
+    RESULT_MAPPING = {}
 
     require 'bridge_api/api_array'
 
@@ -36,7 +36,7 @@ module BridgeAPI
 
     # Override Footrest request for ApiArray support
     def request(method, &block)
-      ApiArray::process_response(connection.send(method, &block), self)
+      ApiArray::process_response(connection.send(method, &block), self, RESULT_MAPPING)
     end
 
     def set_connection(config)
@@ -68,4 +68,3 @@ module BridgeAPI
     end
   end
 end
-

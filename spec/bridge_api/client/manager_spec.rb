@@ -13,9 +13,10 @@ describe BridgeAPI::Client::User do
 
   it 'should get all the people who report to a manager' do
     response = @client.get_manager_direct_reports(17)
-    expect(response['direct_reports'].count).to(eq(2))
-    expect(response['direct_reports'].first['id']).to(eq("3"))
+    expect(response.members.count).to(eq(2))
+    expect(response.members.first['id']).to(eq("3"))
+    expect(response.meta['direct_reports_count']).to(eq(2))
+    expect(response.meta['manager_id']).to(eq("17"))
   end
 
 end
-
