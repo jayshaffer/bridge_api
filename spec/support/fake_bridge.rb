@@ -154,6 +154,10 @@ class FakeBridge < Sinatra::Base
     get_json_data 200, 'live_course_enrollments.json'
   end
 
+  #Sub Accounts
+  get %r{/api/admin/sub_accounts} do
+    get_json_data 200, 'sub_accounts.json'
+  end
 
   private
 

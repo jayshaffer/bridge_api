@@ -1,0 +1,68 @@
+{
+"meta": {},
+"sub_accounts": [
+{
+"id": "141",
+"administrators": "",
+"branding_enabled": true,
+"contact_email": "",
+"contact_name": "",
+"contact_phone": "",
+"limited_authoring": false,
+"bridge_retain": true,
+"locale": "en",
+"name": "Customers",
+"subdomain": "customer",
+"time_zone": "America/Denver",
+"notifications": true,
+"chat_notifications": false,
+"from_label": "Training.",
+"reply_to": "",
+"support_level": "adminsOnly",
+"show_custom_support_info": true,
+"support_name": "Education Info",
+"support_phone": null,
+"support_email": "",
+"use_custom_support": false,
+"products": [
+{
+"product_name": "learn",
+"subscription_type": "paid"
+}
+],
+"created_at": "2017-05-31T15:29:06.060-06:00",
+"is_active": true,
+"course_count": 1,
+"user_count": 26,
+"import_passwords": false,
+"tac_type": "domestic",
+"tac_custom_body": null,
+"lynda_org_id": null,
+"auto_csv": false,
+"password_reset_allowed": true,
+"password_minimum_length": null,
+"password_requires_numbers": false,
+"password_requires_symbols": false,
+"password_requires_uppercase": false,
+"import_profile": {
+"csv_days": [
+false,
+false,
+false,
+false,
+false,
+false,
+false
+],
+"csv_time": null,
+"csv_url": null,
+"csv_user": null
+},
+"auth": {
+"provider": "Basic",
+"model": "User"
+},
+"create_user_from_auth_hash": true
+}
+]
+}

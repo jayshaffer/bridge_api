@@ -23,6 +23,7 @@ module BridgeAPI
     AUTHOR_PATH = "/author"
     LEARNER_PATH = "/learner"
     CUSTOM_FIELD_PATH = "/custom_fields"
+    SUB_ACCOUNT_PATH = '/sub_accounts'
     API_VERSION = 1
     API_PATH = '/api'
     RESULT_MAPPING = {}
