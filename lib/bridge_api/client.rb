@@ -26,6 +26,7 @@ module BridgeAPI
     SUB_ACCOUNT_PATH = '/sub_accounts'
     API_VERSION = 1
     API_PATH = '/api'
+    ROLE_PATH = '/roles'
     RESULT_MAPPING = {}
 
     require 'bridge_api/api_array'
