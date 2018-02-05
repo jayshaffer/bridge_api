@@ -6,7 +6,7 @@ module BridgeAPI
     @next_page = nil
     @prev_page = nil
 
-    attr_reader :status, :headers, :members
+    attr_reader :status, :headers, :members, :body, :errors
 
     def self.process_response(response, api_client, result_mapping)
       ApiArray.new(response, api_client, result_mapping)
@@ -18,6 +18,10 @@ module BridgeAPI
       @linked = {}
       @meta = {}
       @extra_meta_fields = []
+      @headers = response.try(:headers)
+      @status= response.try(:status)
+      @body= response.try(:body)
+      @errors = response.body['errors']  rescue []
       pattern = /.*(\/api\/.*)/
       path = response.env.url
       matches = pattern.match(path.to_s)
@@ -124,8 +128,6 @@ module BridgeAPI
         @linked = {}
         @meta = {}
       end
-      @status = response.status
-      @headers = response.headers
       @method = response.env[:method]
       init_pages(response)
       init_linked(response)
