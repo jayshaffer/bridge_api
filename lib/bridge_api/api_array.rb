@@ -18,10 +18,6 @@ module BridgeAPI
       @linked = {}
       @meta = {}
       @extra_meta_fields = []
-      @headers = response.try(:headers)
-      @status= response.try(:status)
-      @body= response.try(:body)
-      @errors = response.body['errors']  rescue []
       pattern = /.*(\/api\/.*)/
       path = response.env.url
       matches = pattern.match(path.to_s)
@@ -37,7 +33,16 @@ module BridgeAPI
         when *((200..206).to_a + [302])
           apply_response_metadata(response)
           @members = get_response_content(response)
+      else
+        set_response_vars(response)
       end
+    end
+
+    def set_response_vars(response)
+      @headers = response.headers
+      @status= response.status
+      @body= response.body
+      @errors = response.body['errors']  rescue []
     end
 
     def length
@@ -129,6 +134,7 @@ module BridgeAPI
         @meta = {}
       end
       @method = response.env[:method]
+      set_response_vars(response)
       init_pages(response)
       init_linked(response)
       init_meta(response)
