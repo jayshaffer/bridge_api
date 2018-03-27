@@ -98,6 +98,10 @@ class FakeBridge < Sinatra::Base
     get_json_data 200, 'enrollment.json'
   end
 
+  post %r{/api/author/enrollments/\d+/due_date$} do
+    get_json_data 200, 'enrollment.json'
+  end
+
   #Custom Fields
 
   get %r{/api/author/custom_fields} do

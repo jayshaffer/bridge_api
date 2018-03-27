@@ -18,6 +18,10 @@ module BridgeAPI
         get("#{API_PATH}#{AUTHOR_PATH}#{COURSE_TEMPLATE_PATH}/#{course_template_id}#{ENROLLMENT_PATH}", params)
       end
 
+      def update_enrollment_due_date(enrollment_id, params = {})
+        post("#{API_PATH}#{AUTHOR_PATH}#{ENROLLMENT_PATH}/#{enrollment_id}/due_date", params)
+      end
+
     end
   end
 end

@@ -27,5 +27,11 @@ describe BridgeAPI::Client::Enrollment do
     expect(enrollments.length).to(eq(2))
   end
 
+  it 'should update due date for enrollments' do
+    enrollment = [{end_at: nil}]
+    response = @client.update_enrollment_due_date(1, enrollment)
+    expect(response.status).to(eq 200)
+  end
+
 end
 
